@@ -39,3 +39,9 @@ type:'success',        //显示类型，包括4种：success.error,info,warning
 showClose:false,       //显示关闭按钮（默认：否）
 autoClose:true,        //是否自动关闭（默认：是）
 ```
+
+### 3.版本介绍
+
+message.js：包含进场退场动画，不兼容旧版本
+
+messageIE.js：没有动画效果，兼容旧版本
