@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="message.css">
+        <style>
+            /* 非组件样式 */
+            .btn{
+                margin-right:20px;
+                margin-left:20px;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="btn btn-success">成功提示</button>
+        <button class="btn btn-danger">失败提示</button>
+        <button class="btn btn-warning">警告提示</button>
+        <button class="btn btn-info">信息提醒</button>
+        <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <script src="message.js"></script>
+        <script>
+            $(function(){
+                $('.btn-success').on('click',function(){
+                    $.message('成功');
+                })
+                $('.btn-danger').on('click',function(){
+                    $.message({
+                        message:'失败提示',
+                        type:'error'
+                    });
+                })
+                $('.btn-warning').on('click',function(){
+                    $.message({
+                        message:'警告提示',
+                        type:'warning'
+                    });
+                })
+                $('.btn-info').on('click',function(){
+                    $.message({
+                        message:'信息提醒',
+                        type:'info'
+                    });
+                })
+                
+            })
+        </script>
+    </body>
+</html>
