@@ -9,15 +9,59 @@
             /* 非组件样式 */
             .btn{
                 margin-right:20px;
-                margin-left:20px;
+            }
+            .p40{
+                padding:40px;
+            }
+            .mt20{
+                margin-top:20px;
             }
         </style>
     </head>
     <body>
-        <button class="btn btn-success">成功提示</button>
-        <button class="btn btn-danger">失败提示</button>
-        <button class="btn btn-warning">警告提示</button>
-        <button class="btn btn-info">信息提醒</button>
+        <div class="p40">
+            <p>点击调用提示</p>
+            <button class="btn btn-success">成功提示</button>
+            <button class="btn btn-danger">失败提示</button>
+            <button class="btn btn-warning">警告提示</button>
+            <button class="btn btn-info">信息提醒</button>
+        </div>
+        <div class="p40">
+            <p>调用方式：</p>
+<pre>
+$('.btn-success').on('click',function(){
+    $.message('成功');
+})
+$('.btn-danger').on('click',function(){
+    $.message({
+        message:'失败提示',
+        type:'error'
+    });
+})
+$('.btn-warning').on('click',function(){
+    $.message({
+        message:'警告提示',
+        type:'warning'
+    });
+})
+$('.btn-info').on('click',function(){
+    $.message({
+        message:'信息提醒',
+        type:'info'
+    });
+})
+ </pre>
+
+            <p class="mt20">参数详解：</p>
+<pre>
+message:' 操作成功',    //提示信息
+time:'2000',           //显示时间（默认：2s）
+type:'success',        //显示类型，包括4种：success.error,info,warning
+showClose:false,       //显示关闭按钮（默认：否）
+autoClose:true,        //是否自动关闭（默认：是）
+</pre>
+        </div>
+
         <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
         <script src="message.js"></script>
         <script>
