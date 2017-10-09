@@ -1,37 +1,41 @@
-## Welcome to GitHub Pages
+## Message消息提示插件
 
-You can use the [editor on GitHub](https://github.com/qiuyaofan/message/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+一个和vue element交互调用差不多的jquery提示插件
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+ [ 在线例子](https://qiuyaofan.github.io/message/) 
 
-### Markdown
+### 1.调用方式
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+$('.btn-success').on('click',function(){
+    $.message('成功');
+})
+$('.btn-danger').on('click',function(){
+    $.message({
+        message:'失败提示',
+        type:'error'
+    });
+})
+$('.btn-warning').on('click',function(){
+    $.message({
+        message:'警告提示',
+        type:'warning'
+    });
+})
+$('.btn-info').on('click',function(){
+    $.message({
+        message:'信息提醒',
+        type:'info'
+    });
+})
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### 2.参数介绍
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/qiuyaofan/message/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+```
+message:' 操作成功',    //提示信息
+time:'2000',           //显示时间（默认：2s）
+type:'success',        //显示类型，包括4种：success.error,info,warning
+showClose:false,       //显示关闭按钮（默认：否）
+autoClose:true,        //是否自动关闭（默认：是）
+```
