@@ -36,9 +36,11 @@ $.extend({
       //message模版
       var templateClose=defaults.showClose?'<a class="c-message--close">×</a>':'';
       var template='<div class="c-message messageFadeInDown">'+
-          '<i class=" c-message--icon c-message--'+defaults.type+'"></i>'+
-          templateClose+
-          '<div class="c-message--tip">'+defaults.message+'</div>'+
+          '<div class="c-message--main">' +
+            '<i class=" c-message--icon c-message--'+defaults.type+'"></i>'+
+            templateClose+
+            '<div class="c-message--tip">'+defaults.message+'</div>'+
+          '</div>'+
       '</div>';
       var _this=this;
       var $body=$('body');
